@@ -6,32 +6,10 @@
 @plugin "@tailwindcss/typography";
 @plugin "tailwindcss-animate";
 
-
-@layer base {
-  :root {
-    --radius: 0.5rem;
-    --color-primary-100: #FFE8F0;
-    --color-primary: #EE2B69;
-    --color-secondary: #FBE843;
-    --color-black-100: #333333;
-    --color-black-200: #141413;
-    --color-black-300: #7D8087;
-    --color-black: #000000;
-    --color-white-100: #F7F7F7;
-    --color-white: #FFFFFF;
-    --font-work-sans: "Work Sans", sans-serif;
-    --radius: 0.5rem;
-    --radius-lg: var(--radius);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-sm: calc(var(--radius) - 4px);
-    --shadow-100: 2px 2px 0px 0px rgb(0, 0, 0);
-    --shadow-200: 2px 2px 0px 2px rgb(0, 0, 0);
-    --shadow-300: 2px 2px 0px 2px rgb(238, 43, 105);
-  }
-}
 @theme  {
-  --breakpoint-xs: "475px";
-  --color-primary-100:#FFE8F0;
+  --breakpoint-xs: "475px",
+  /* Colors */
+  --color-primary-100: #FFE8F0;
   --color-primary: #EE2B69;
   --color-secondary: #FBE843;
   --color-black-100: #333333;
@@ -92,7 +70,7 @@
   }
 
   .pink_container {
-    @apply w-full bg-[var(--color-primary)] min-h-[530px] flex justify-center items-center flex-col py-10 px-6;
+    @apply w-full bg-[--color-primary] min-h-[530px] flex justify-center items-center flex-col py-10 px-6;
     background-image: linear-gradient(
       to right,
       transparent 49.5%,
@@ -106,7 +84,7 @@
   }
 
   .tag {
-    @apply bg-[var(--color-secondary)] px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative;
+    @apply bg-[--color-secondary] px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative;
     &:before {
       content: '';
       position: absolute;
@@ -133,7 +111,7 @@
     @apply uppercase bg-black px-6 py-3 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
   }
 
-  .sub_heading {
+  .sub-heading {
     @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
   }
 
@@ -150,7 +128,7 @@
   }
 
   .no-result {
-    @apply text-[var(--color-black-100)] text-sm font-normal;
+    @apply text-[--color-black-100] text-sm font-normal;
   }
 
   /* profile */
@@ -159,7 +137,7 @@
   }
 
   .profile_card {
-    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-[var(--color-primary)] border-[5px] border-black shadow-[var(--shadow-100)] rounded-[30px] relative z-0 h-fit max-lg:w-full;
+    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-[--color-primary] border-[5px] border-black shadow-[var(--shadow-100)] rounded-[30px] relative z-0 h-fit max-lg:w-full;
   }
 
   .profile_title {
@@ -198,7 +176,7 @@
   }
 
   .search-input {
-    @apply flex-1 font-bold placeholder:font-semibold placeholder:text-[var(--color-black-100)] w-full h-auto outline-none;
+    @apply flex-1 font-bold placeholder:font-semibold placeholder:text-[--color-black-100] w-full h-auto outline-none;
   }
 
   .search-btn {
@@ -207,15 +185,15 @@
 
   /* startupcard */
   .startup-card {
-    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-[var(--shadow-200)] hover:border-[var(--color-primary)] transition-all duration-500 hover:shadow-[var(--shadow-300)] hover:bg-[var(--color-primary-100)];
+    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-[var(--shadow-200)] hover:border-[--color-primary] transition-all duration-500 hover:shadow-[var(--shadow-300)] hover:bg-[--color-primary-100];
   }
 
   .startup-card_date {
-    @apply font-medium text-[16px] bg-[var(--color-primary-100)] px-4 py-2 rounded-full group-hover:bg-[var(--color-white-100)];
+    @apply font-medium text-[16px] bg-[--color-primary-100] px-4 py-2 rounded-full group-hover:bg-[--color-white-100];
   }
 
   .startup-card_desc {
-    @apply font-normal text-[16px] line-clamp-2 my-3 text-[var(--color-black-100)] break-all;
+    @apply font-normal text-[16px] line-clamp-2 my-3 text-[--color-black-100] break-all;
   }
 
   .startup-card_img {
@@ -223,7 +201,7 @@
   }
 
   .startup-card_btn {
-    @apply !rounded-full !bg-[var(--color-black-200)] font-medium text-[16px] text-white !px-5 !py-3;
+    @apply !rounded-full !bg-[--color-black-200] font-medium text-[16px] text-white !px-5 !py-3;
   }
 
   .startup-card_skeleton {
@@ -244,7 +222,7 @@
   }
 
   .startup-form_textarea {
-    @apply border-[3px] !border-black !p-5 text-[18px] text-black font-semibold !rounded-[20px] mt-3 placeholder:text-[var(--color-black-300)];
+    @apply border-[3px] !border-black !p-5 text-[18px] text-black font-semibold !rounded-[20px] mt-3 placeholder:text-[--color-black-300];
   }
 
   .startup-form_error {
@@ -252,11 +230,11 @@
   }
 
   .startup-form_editor {
-    @apply mt-3 border-[3px] !border-black text-[18px] text-black font-semibold placeholder:text-[var(--color-black-300)];
+    @apply mt-3 border-[3px] !border-black text-[18px] text-black font-semibold placeholder:text-[--color-black-300];
   }
 
   .startup-form_btn {
-    @apply bg-[var(--color-primary)] border-[4px] !border-black !rounded-full !p-5 min-h-[70px] w-full font-bold text-[18px];
+    @apply bg-[--color-primary] border-[4px] !border-black !rounded-full !p-5 min-h-[70px] w-full font-bold text-[18px];
   }
 
   /* view */
@@ -265,11 +243,11 @@
   }
 
   .view-text {
-    @apply font-medium text-[16px] bg-[var(--color-primary-100)] px-4 py-2 rounded-lg capitalize;
+    @apply font-medium text-[16px] bg-[--color-primary-100] px-4 py-2 rounded-lg capitalize;
   }
 
   .category-tag {
-    @apply font-medium text-[16px] bg-[var(--color-primary-100)] px-4 py-2 rounded-full;
+    @apply font-medium text-[16px] bg-[--color-primary-100] px-4 py-2 rounded-full;
   }
 }
 
