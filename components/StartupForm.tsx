@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useActionState } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import MDEditor from "@uiw/react-md-editor";
@@ -69,10 +69,16 @@ const StartupForm = () => {
     }
   };
 
-  const [ formAction, isPending] = useActionState(handleFormSubmit, {
-    error: "",
-    status: "INITIAL",
-  });
+  const [isPending, setIsPending] = useState(false);
+
+  const formAction = async (formData: FormData) => {
+    setIsPending(true);
+    try {
+      await handleFormSubmit({ error: "", status: "INITIAL" }, formData);
+    } finally {
+      setIsPending(false);
+    }
+  };
 
   return (
     <form action={formAction} className="startup-form">
