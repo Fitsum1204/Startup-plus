@@ -4,7 +4,7 @@ import "./globals.css";
 import "easymde/dist/easymde.min.css";
 //import { Toaster } from "@/components/ui/toaster";
 
-export const workSans = localFont({
+const workSans = localFont({
   src: [
     {
       path: "./fonts/WorkSans-Black.ttf",
