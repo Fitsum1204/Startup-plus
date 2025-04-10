@@ -56,7 +56,7 @@ export const workSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "YC Directory",
+  title: "STARTUP PLUS",
   description: "Pitch, Vote and Grow",
 };
 
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="workSans.variable"
+        className={workSans.variable}
       >
         {children}
       {/*   <Toaster /> */}
