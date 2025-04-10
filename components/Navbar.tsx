@@ -39,7 +39,7 @@ export const Navbar = async() => {
                     <form action={async() => {
                         'use server'
                         await signIn('github')}}>
-                            <button className='cursor-pointer'
+                            <button className='cursor-pointer m-4 text-white bg-black rounded-full px-4 py-2 hover:bg-gray-800 transition duration-300 ease-in-out'
                             type='submit'>
                                 Login
                             </button>
